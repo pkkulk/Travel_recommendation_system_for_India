@@ -1,0 +1,29 @@
+<!-- templates/feedback.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-2xl font-bold">User Feedback</h1>
+        </div>
+    </header>
+
+    <section class="mt-8 container mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <form action="/feedback" method="POST" class="grid grid-cols-1 gap-4">
+            <input type="number" name="user_id" placeholder="User ID" class="form-input rounded-lg p-2 border border-gray-300">
+            <input type="number" name="destination_id" placeholder="Destination ID" class="form-input rounded-lg p-2 border border-gray-300">
+            <input type="number" step="0.1" name="rating" placeholder="Rating (out of 5)" class="form-input rounded-lg p-2 border border-gray-300">
+            <textarea name="comments" placeholder="Comments" class="form-textarea rounded-lg p-2 border border-gray-300"></textarea>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-lg">Submit Feedback</button>
+        </form>
+    </section>
+
+</body>
+</html>

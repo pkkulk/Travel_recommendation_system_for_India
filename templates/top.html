@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Destinations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css">
+</head>
+<body><center>
+    <form method="post">
+        enter state:
+        <input name="state" type="text" >
+    </form>
+    <div class="container mx-auto mt-10">
+        <h1 class="text-3xl font-bold mb-6">Top Destinations in India</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for destination in top_destinations %}
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                <h2 class="text-2xl font-semibold">{{ destination['name'] }}</h2>
+                <p class="text-gray-600">State: {{ destination['state'] }}</p>
+                <p class="text-gray-600">Best Time to Visit: {{ destination['best_time'] }}</p>
+                <p class="text-gray-600">Average Cost per Day: ₹{{ destination['avg_cost_per_day'] }}</p>
+                <p class="text-gray-600">Rating: {{ destination['rating'] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

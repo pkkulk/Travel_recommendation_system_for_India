@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences</title>
+</head>
+<body>
+    <h1>Enter Your Travel Preferences</h1>
+    <form action="/user" method="POST">
+        <label for="budget">Budget:</label>
+        <input type="text" name="budget" required><br>
+        
+        <label for="travel_style">Travel Style:</label>
+        <input type="text" name="travel_style" required><br>
+        
+        <label for="interests">Interests:</label>
+        <input type="text" name="interests" required><br>
+        
+        <label for="climate">Preferred Climate:</label>
+        <input type="text" name="climate" required><br>
+        
+        <label for="duration">Duration (days):</label>
+        <input type="number" name="duration" required><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

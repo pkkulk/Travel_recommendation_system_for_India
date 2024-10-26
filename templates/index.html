@@ -1,0 +1,57 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Travel Recommendation System</h1>
+            <nav class="space-x-4">
+                <a href="/" class="hover:text-gray-200">Home</a>
+                <a href="/recommendations" class="hover:text-gray-200">Recommendations</a>
+                <!-- Add this inside the navigation in index.html -->
+<a href="/update_delete" class="hover:text-gray-200">Update/Delete User</a>
+
+                <a href="/feedback" class="hover:text-gray-200">User Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mt-16 container mx-auto text-center">
+        <h2 class="text-5xl font-bold text-gray-800 mb-4">Discover the Beauty of India</h2>
+        <p class="text-lg text-gray-600 mb-8">Plan your perfect trip with personalized travel recommendations tailored to your preferences.</p>
+        <a href="/recommendations" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">Get Started</a>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="mt-16 container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+           <a href="top"> <h3 class="text-2xl font-semibold mb-2">Top Destinations</h3>
+            <p class="text-gray-600">Explore the best places to visit in India, from beaches to mountains.</p>
+           </a></div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-2">Budget-Friendly Options</h3>
+            <p class="text-gray-600">Find travel spots that fit your budget and preferences.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <a href="custom"><h3 class="text-2xl font-semibold mb-2">Custom Itineraries</h3>
+            <p class="text-gray-600">Get recommendations based on your interests, travel style, and climate preference.</p>
+        </a></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-gray-800 text-white p-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2ch024 Travel Recommendation System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

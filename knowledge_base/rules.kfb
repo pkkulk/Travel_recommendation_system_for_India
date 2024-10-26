@@ -1,0 +1,6 @@
+rule suggest_destination:
+     if (user_budget < 500)
+     then
+         recommended_destination="budget Destination A";
+     else
+         recommended_destination="buget Destination B";

@@ -1,0 +1,75 @@
+<!-- templates/recommendations.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Travel Recommendations</h1>
+            <a href="/" class="hover:text-gray-200">Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Form Section -->
+    <section class="mt-16 container mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Get Your Travel Recommendations</h2>
+        <form action="/recommendations" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <label for="budget" class="block text-gray-700">Budget (per day in ₹):</label>
+                <input type="number" name="budget" id="budget" placeholder="Enter your budget" class="form-input rounded-lg mt-2 w-full p-3 border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="travel_style" class="block text-gray-700">Travel Style:</label>
+                <input type="text" name="travel_style" id="travel_style" placeholder="e.g., Adventure, Relaxation" class="form-input rounded-lg mt-2 w-full p-3 border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="interests" class="block text-gray-700">Interests:</label>
+                <input type="text" name="interests" id="interests" placeholder="e.g., Beaches, Mountains" class="form-input rounded-lg mt-2 w-full p-3 border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="climate" class="block text-gray-700">Preferred Climate:</label>
+                <input type="text" name="climate" id="climate" placeholder="e.g., Cool, Tropical" class="form-input rounded-lg mt-2 w-full p-3 border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div>
+                <label for="duration" class="block text-gray-700">Trip Duration (days):</label>
+                <input type="number" name="duration" id="duration" placeholder="Enter the number of days" class="form-input rounded-lg mt-2 w-full p-3 border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="md:col-span-2">
+                <button type="submit" class="w-full bg-blue-500 text-white p-4 rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">Get Recommendations</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Recommendations List -->
+    {% if recommendations %}
+    <section class="mt-16 container mx-auto">
+        <h2 class="text-3xl font-bold mb-6">Recommended Destinations</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for recommendation in recommendations %}
+            <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105">
+                <h3 class="text-xl font-semibold">{{ recommendation.name }}</h3>
+                <p class="text-gray-600">{{ recommendation.state }}</p>
+                <p class="mt-2 text-gray-800">Best time to visit: {{ recommendation.best_time_to_visit }}</p>
+                <p class="mt-1 text-yellow-500">Rating: {{ recommendation.rating }}/5</p>
+                <p class="mt-4 text-blue-500"><a href="/destination/{{ recommendation.destination_id }}" class="hover:underline">View Details</a></p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-gray-800 text-white p-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Travel Recommendation System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
