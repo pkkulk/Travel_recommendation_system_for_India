@@ -9,7 +9,6 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Header -->
     <header class="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-6 shadow-md">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-bold">Travel Recommendations</h1>
@@ -17,7 +16,6 @@
         </div>
     </header>
 
-    <!-- Form Section -->
     <section class="mt-16 container mx-auto bg-white p-8 rounded-lg shadow-lg">
         <h2 class="text-4xl font-bold text-gray-800 mb-8 text-center">Get Your Travel Recommendations</h2>
         <form action="/recommendations" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -47,7 +45,6 @@
         </form>
     </section>
 
-    <!-- Recommendations List -->
     {% if recommendations %}
     <section class="mt-16 container mx-auto">
         <h2 class="text-3xl font-bold mb-6">Recommended Destinations</h2>
@@ -68,7 +65,7 @@
     <!-- Footer -->
     <footer class="mt-16 bg-gray-800 text-white p-6">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Travel Recommendation System. All rights reserved.</p>
+            <p>2024 Travel Recommendation System. All rights reserved.</p>
         </div>
     </footer>
 </body>
